@@ -31,14 +31,9 @@ with open("data/en_conceptnet.json", "r", encoding="utf-8") as f:
 df_input=pd.read_csv('output/forensic_extractions.csv',sep=';')
 
 with driver.session() as session: 
-    print("Connessione riuscita!\n")
     csv_entities = df_input["Object"].astype(str).str.strip().unique()
     for entity in csv_entities:
         if entity in graph:
-            print(f"Provo a inserire la conoscenza del termine {entity}...\n")
             session.execute_write(import_conceptnet,entity,graph[entity])
-            print(f"OK! Inserita conoscenza del termine {entity}!\n")
-        else:
-            print(f"Entità {entity} non presente nel grafo di ConceptNet!\n")
-    print("Chiudo la connessione!\n")
+        
 driver.close()

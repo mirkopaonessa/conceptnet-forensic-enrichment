@@ -139,13 +139,10 @@ def entity_linking(term,known_word):
     if has_llm_valid_vector and has_known_valid_vector:
         similarity_score=llm_doc.similarity(known_word_doc)
         if similarity_score > 0.90:
-            print(f"Sostituisco il termine {term} con il termine {known_word}, similarità al {similarity_score}\n")
             return True
         else:
-            print(f"[-] NON sostituisco '{term}' con '{known_word}' (Similarità troppo bassa: {similarity_score})\n")
             return False
 
-    print(f"NON sostituisco il termine {term} con il termine {known_word}\n")
     return False
 
 
@@ -168,11 +165,6 @@ for i in range(0,total_rows,BATCH_SIZE):
         relations=str(row['relations']).strip()
         batch_data_str+=f"- Object: {entity}, Relations: {relations}\n"
     
-    print(f"\n=======================================================")
-    print(f"Elaborazione Batch {i//BATCH_SIZE + 1} di {(total_rows + BATCH_SIZE - 1)//BATCH_SIZE}")
-    print(f"Entità in elaborazione...")
-
-    
 
     extensions_found=[]
     
@@ -190,19 +182,14 @@ for i in range(0,total_rows,BATCH_SIZE):
                 if relation in graph[object]:
                     if related_term not in graph[object][relation]:
                         if related_term in vocabulary:
-                            print(f"Termine {related_term} da associare all'entità {object} tramite relazione {relation} già presente nel grafo di ConceptNet, la aggiungo normalmente!\n")
                             extensions_found.append([relation,object,related_term])
                         else:
                             final_term=already_known(related_term)
                             extensions_found.append([relation,object,final_term])
-                    else:
-                        print(f"Termine {related_term} già presente nella lista di termini correlati all'entità {object} tramite la relazione {relation}\n")
                 else:
                     if relation in relations_list: 
-                        print(f"Relazione {relation} non presente nella lista delle relazioni correlate al termine {object}, la creiamo!\n")
                         if related_term in vocabulary:
                             if [relation,object,related_term] not in extensions_found:
-                                print(f"Termine {related_term} da associare all'entità {object} tramite relazione {relation} già presente nel grafo di ConceptNet, la aggiungo normalmente!\n")
                                 extensions_found.append([relation,object,related_term])
                         else:
                             final_term=already_known(related_term)
@@ -212,12 +199,9 @@ for i in range(0,total_rows,BATCH_SIZE):
         if len(extensions_found)>0:
             df_output=pd.DataFrame(extensions_found)
             df_output.to_csv(output_path,mode='a',header=False, index=False, sep=';', encoding='utf-8')   
-            print(f"Salvate {len(extensions_found)} triple nel file CSV.\n")
-        else:
-            print("Nessuna tripla estratta in questo batch (Omission Rule applicata).\n")
 
     except Exception as e:
-        print(f"Errore: {e}\n")
+        print(f"Error: {e}\n")
 
     if i+BATCH_SIZE<total_rows:
         time.sleep(15)
