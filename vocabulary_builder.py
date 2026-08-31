@@ -6,17 +6,7 @@ with open("data/en_conceptnet.json", "r", encoding="utf-8") as json_file:
 
 vocabulary=set()
 
-# STRUTTURA:
-# pillow: 
-#      isA:
-#       cushion,
-#       flexible_thing,
-#       ....
-#      usedFor:
-#        sleeping,
-#        ....
 
-# aggiungo nel mio vocabolario tutte le parole e le parole correlate (è un set, scarta i doppioni)
 for key,relations in graph.items():
     vocabulary.add(key)
     for relation,related_terms in relations.items():

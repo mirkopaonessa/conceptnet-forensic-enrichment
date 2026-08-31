@@ -15,8 +15,6 @@ whitelist = ['artifact', 'object', 'tool', 'device', 'weapon', 'container', 'fur
 entities=set()
 
 
-# se ha madeof controlla la blacklist di IsA, se passa PROMOSSO. Se non ha MadeOf ma ha IsA controllo se passa la whitelist ,
-# se passa PROMOSSO. al 99% tutte hanno IsA. Se invece non ha ne IsA ne MadeOf scarta
 for entity, relations in graph.items():
     if "IsA" not in relations:
         continue
