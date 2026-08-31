@@ -1,0 +1,7 @@
+entity;relations
+car_audio;AtLocation, CapableOf, Causes, HasA, HasProperty, IsA, LocatedNear, MadeOf, PartOf, UsedFor
+savings_bank;AtLocation, CapableOf, Causes, HasA, HasProperty, IsA, LocatedNear, MadeOf, PartOf, UsedFor
+cardboard_box;AtLocation, CapableOf, Causes, HasA, HasProperty, IsA, LocatedNear, MadeOf, PartOf, UsedFor
+battle_rifle;AtLocation, CapableOf, Causes, HasA, HasProperty, IsA, LocatedNear, MadeOf, PartOf, UsedFor
+computer_display;AtLocation, CapableOf, Causes, HasA, HasProperty, IsA, LocatedNear, MadeOf, PartOf, UsedFor
+club_drug;AtLocation, CapableOf, Causes, HasA, HasProperty, IsA, LocatedNear, MadeOf, PartOf, UsedFor
