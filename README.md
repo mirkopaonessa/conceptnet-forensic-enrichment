@@ -1,5 +1,11 @@
+Questo repository contiene il codice sorgente e i dataset relativi al progetto di tesi "Arricchimento del Knowledge Graph ConceptNet per il dominio forense tramite LLM". Il sistema utilizza il modello LLaMA 3.3 70b - versatile (interrogato tramite Groq API) per generare e dedurre nuova terminologia forense, espandendo le relazioni di senso comune preesistenti di ConceptNet in un contesto investigativo e criminologico.
+
+## Prerequisiti
+Python 3.10 o superiore.
+Per eseguire lo script principale di estrazione è necessario disporre di una chiave API valida fornita da Groq.
+
+
 ### Come avviare lo script principale "script.py" (Setup iniziale)
-Requisiti: Python 3.10 o superiore  
 **1. Creare un ambiente virtuale:**
 ```
 python3 -m venv venv
