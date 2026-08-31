@@ -1,6 +1,6 @@
 ## 🇮🇹 ITALIANO
 
-Questo repository contiene il codice sorgente e i dataset relativi al progetto di tesi "Arricchimento del Knowledge Graph ConceptNet per il dominio forense tramite LLM". Il sistema utilizza il modello LLaMA 3.3 70B Versatile (interrogato tramite Groq API) per generare e dedurre nuova terminologia forense, espandendo le relazioni di senso comune preesistenti di ConceptNet in un contesto investigativo e criminologico.
+Questo repository contiene il codice sorgente e i dataset relativi al progetto di tesi "Arricchimento del Knowledge Graph ConceptNet per il dominio forense tramite LLM". Il sistema utilizza il modello LLaMA 3.3 70B Versatile (interrogato tramite Groq API) per generare e dedurre nuova terminologia forense, arricchendo le relazioni di senso comune preesistenti di ConceptNet in un contesto investigativo e criminologico.
 
 ### Prerequisiti
 * Python 3.10 o superiore.
@@ -60,7 +60,7 @@ Se si desidera integrare la conoscenza di senso comune delle entità analizzate 
 
 ## 🇬🇧 ENGLISH
 
-This repository contains the source code and datasets for the thesis project "Enrichment of the ConceptNet Knowledge Graph for the Forensic Domain via LLMs". The system uses the LLaMA 3.3 70B Versatile model (queried via the Groq API) to generate and deduce new forensic terminology, expanding ConceptNet's pre-existing commonsense relations within an investigative and criminological context.
+This repository contains the source code and datasets for the thesis project "Enrichment of the ConceptNet Knowledge Graph for the Forensic Domain via LLMs". The system uses the LLaMA 3.3 70B Versatile model (queried via the Groq API) to generate and deduce new forensic terminology, enriching ConceptNet's pre-existing commonsense relations within an investigative and criminological context.
 
 ### Prerequisites
 * Python 3.10 or higher.
